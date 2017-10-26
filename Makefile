@@ -52,6 +52,7 @@ include $(OR_ROOT)makefiles/Makefile.third_party.$(SYSTEM).mk
 # Include .mk files.
 include $(OR_ROOT)makefiles/Makefile.cpp.mk
 include $(OR_ROOT)makefiles/Makefile.python.mk
+include $(OR_ROOT)makefiles/Makefile.go.mk
 include $(OR_ROOT)makefiles/Makefile.java.mk
 include $(OR_ROOT)makefiles/Makefile.csharp.mk
 include $(OR_ROOT)makefiles/Makefile.archive.mk

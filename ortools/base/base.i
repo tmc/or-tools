@@ -395,6 +395,33 @@ COPY_TYPEMAPS(unsigned long long, uint64);
 #undef COPY_TYPEMAPS
 #endif  // SWIGCSHARP
 
+#ifdef SWIGGO
+%{
+#include <map>
+#include <set>
+#include <string>
+#include <unordered_set>
+#include <vector>
+
+#include "ortools/base/basictypes.h"
+%}
+
+%include <stl.i>
+%include "std_vector.i"
+
+%define COPY_TYPEMAPS(oldtype, newtype)
+typedef oldtype newtype;
+%enddef
+
+COPY_TYPEMAPS(signed char, schar);
+COPY_TYPEMAPS(int, int32);
+COPY_TYPEMAPS(unsigned int, uint32);
+COPY_TYPEMAPS(long long, int64);
+COPY_TYPEMAPS(unsigned long long, uint64);
+
+#undef COPY_TYPEMAPS
+#endif  // SWIGGO
+
 // SWIG macros for explicit API declaration.
 // Usage:
 //
